@@ -1,0 +1,29 @@
+{
+  "name": "namste-react",
+  "version": "1.0.0",
+  "description": "This is Namaste React for Learning React",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dry-4/NamsteReact.git"
+  },
+  "author": "Sudhanshu Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dry-4/NamsteReact/issues"
+  },
+  "homepage": "https://github.com/dry-4/NamsteReact#readme",
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserlist": [
+    "last 10 version"
+  ]
+}

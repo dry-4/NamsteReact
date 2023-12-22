@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
 // Nested HTML Components in ReactJS
 const parent = React.createElement(
    'div', {id : "parent"}, 

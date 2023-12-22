@@ -1,6 +1,10 @@
 #heading {
    font-size: 2rem;
    font-weight: bold;
-   color: #960606;
+   color: #04f524;
    margin-bottom: 1rem;
+}
+
+body {
+   background-color: #887f7f;
 }
