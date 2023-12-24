@@ -1,35 +1,63 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
 import ReactDOM from 'react-dom/client';
 
-// Nested HTML Components in ReactJS
-const parent = React.createElement(
-   'div', {id : "parent"}, 
-   React.createElement('div', {id : "child"},
-      React.createElement('div', {id : "grandchild"},
-         React.createElement('h1', {id : "heading"}, 'Namste React from heading tag!')
-      )
-   )
+//  React.createElement => Object => HTMLElement(render)
+
+const heading = React.createElement('h1', { id: 'heading' }, 'Namste React!!!');
+console.log(heading);
+
+// JSX heading (JSX is not HTML, it is HTML like JavaScript)
+// JSX is not pure JavaScript, js engine can't understand it,
+// so we need to convert it(transpiled) to pure JavaScript, which is handled by parcel or webpack using (Babel)
+// JSX => React.createElement => Object => HTMLElement(render)
+// for multiple line JSX code, we need to wrap it in paranthesis ()
+
+// React Element
+const jsxHeading = <h1 className="head">Namaste React using JSX!!!</h1>;
+
+// React Component
+// Class Based Component => Old method of creating React Component
+// Functional Component => New method of creating React Component
+
+// React Functional Component -> It is a JavaScript function which returns React/JSX Element
+// Note - Always start component name with capital letter
+
+const Title = () => {
+  return <h1 className="head">Namaste React Title Component 🚀🚀!!!</h1>;
+};
+
+// React Component composition -> Rendring component inside another component
+const Heading = () => (
+  <div id="container">
+    {/* <Title /> */}
+    {/* <Title></Title> */}
+    {Title()}
+    <h1 className="head">Namaste React Functional Component!!!</h1>;
+  </div>
 );
 
-// for more than 1 child element, we can use array of elements as well
-const antotherParent = React.createElement(
-   'div', {id : "parent"}, 
-   React.createElement('div', {id : "child"},
-      [  React.createElement('div', {id : "grandchild1"},
-         [  React.createElement('h1', {id : "heading"}, 'Namste React from heading tag from grandchild1!'),
-            React.createElement('h2', {id : "subheading"}, 'Namste React from subheading tag from grandchild1!')]
-         ),
-         React.createElement('div', {id : "grandchild2"},
-         [  React.createElement('h1', {id : "heading"}, 'Namste React from heading tag from grandchild2!'),
-            React.createElement('h2', {id : "subheading"}, 'Namste React from subheading tag from grandchild2!')]
-         )
-      ]
-   )
+// How to render React Element inside React Component
+
+const element = <h1 className="head">Namaste React!!!</h1>; // this is React Object/ JavaScript Object
+
+// In JSX we can write JavaScript expression inside curly braces {}
+// In JSX we can't write JavaScript statement like if else, for loop, switch case etc
+// In JSX we can write JavaScript expression like variable, function call, ternary operator etc
+
+const Heading2 = () => (
+  <div id="container">
+    {element}
+    <h1 className="head">Namaste React Functional Component!!!</h1>;
+  </div>
 );
 
-// Above code looks very complex and hard to read. So, we can use JSX to make it more readable.
+// React Class Based Component -> It is a JavaScript class which extends React.Component class and returns React/JSX Element in render method
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(antotherParent);
 
-console.log(antotherParent);
+// root.render(jsxHeading);
+
+//way to render React Component
+root.render(<Heading2 />);
+console.log(jsxHeading);
